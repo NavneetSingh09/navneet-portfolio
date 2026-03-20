@@ -397,6 +397,30 @@ body{
   .about-col-1 img{
     max-width:250px;
   }
+
+.social-bar{
+    position:fixed;
+
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex; /* 🔥 VERY IMPORTANT */
+
+    flex-direction:row;
+    gap:25px;
+
+    background:rgba(0,0,0,0.6);
+    padding:10px 20px;
+    border-radius:30px;
+
+    backdrop-filter:blur(10px);
+    z-index:9999; /* 🔥 ensure it's on top */
+  }
+
+  .social-bar::before{
+    display:none;
+  }
 }
 
 /* ================= GLOBAL ================= */
