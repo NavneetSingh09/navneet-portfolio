@@ -560,3 +560,16 @@ html{
 .cursor-glow {
   pointer-events: none;
 }
+
+.form-status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-status.success {
+  color: #4caf50;
+}
+
+.form-status.error {
+  color: #ff004f;
+}
