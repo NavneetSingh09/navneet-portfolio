@@ -125,15 +125,16 @@ body{
 }
 
 .parallax-bg{
-  position:absolute;
+   position:absolute;
   top:0;
   left:0;
   width:100%;
   height:120%;
 
-  background:url('/images/navneet1.jpg') no-repeat;
+  background-image: url('/images/navneet1.jpg'); /* DESKTOP */
   background-size:cover;
   background-position:right center;
+  background-repeat:no-repeat;
 
   z-index:-2;
   will-change:transform;
