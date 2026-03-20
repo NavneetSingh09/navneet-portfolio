@@ -285,6 +285,7 @@ body{
   background:rgba(0,0,0,0.3);
   backdrop-filter:blur(8px);
   border-radius:20px;
+  z-index: 999
 }
 
 .social-bar a{
@@ -554,4 +555,8 @@ html{
 .project-links a:hover {
   background: white;
   color: #ff004f;
+}
+
+.cursor-glow {
+  pointer-events: none;
 }
