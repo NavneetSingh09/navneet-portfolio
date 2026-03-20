@@ -4,13 +4,14 @@ function Navbar() {
 
   const [active, setActive] = useState("header");
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
 
     const handleScroll = () => {
 
-      // 🔥 Navbar blur trigger
+      // 🔥 Navbar blur
       setScrolled(window.scrollY > 50);
 
       let current = "";
@@ -18,14 +19,15 @@ function Navbar() {
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
 
-        // 🔥 Better detection (center of screen)
-        if (rect.top <= window.innerHeight / 2 &&
-            rect.bottom >= window.innerHeight / 2) {
+        if (
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2
+        ) {
           current = section.id;
         }
       });
 
-      // 🔥 Fix for last section (Contact)
+      // 🔥 Fix for last section
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
         current = "contact";
       }
@@ -34,42 +36,58 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // 🔥 Run once on load
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 🔥 close menu on click
+  const handleClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
-    <nav className={`nav ${scrolled ? "nav-scrolled" : ""}`}>
+    <nav className={`nav ${scrolled ? "scrolled" : "transparent"}`}>
 
       <h1 className="logo">Navneet</h1>
 
-      <ul>
+      {/* 🔥 HAMBURGER */}
+      <div 
+        className={`hamburger ${menuOpen ? "active" : ""}`} 
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* 🔥 NAV LINKS */}
+      <ul className={menuOpen ? "open" : ""}>
+
         <li>
-          <a className={active === "header" ? "active" : ""} href="#header">
+          <a onClick={handleClick} className={active==="header"?"active":""} href="#header">
             Home
           </a>
         </li>
 
         <li>
-          <a className={active === "about" ? "active" : ""} href="#about">
+          <a onClick={handleClick} className={active==="about"?"active":""} href="#about">
             About
           </a>
         </li>
 
         <li>
-          <a className={active === "projects" ? "active" : ""} href="#projects">
+          <a onClick={handleClick} className={active==="projects"?"active":""} href="#projects">
             Projects
           </a>
         </li>
 
         <li>
-          <a className={active === "contact" ? "active" : ""} href="#contact">
+          <a onClick={handleClick} className={active==="contact"?"active":""} href="#contact">
             Contact
           </a>
         </li>
+
       </ul>
 
     </nav>
