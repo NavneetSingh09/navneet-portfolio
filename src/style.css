@@ -354,9 +354,11 @@ body{
     font-size:16px;
   }
 
-  .parallax-bg{
+   .parallax-bg{
+    background:url('/images/navneet.jpg') no-repeat;
+
+    background-size:cover;
     background-position:center;
-    transform:none !important;
   }
 
   .social-bar{
