@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 function Navbar() {
 
@@ -49,11 +50,20 @@ function Navbar() {
   return (
     <nav className={`nav ${scrolled ? "scrolled" : "transparent"}`}>
 
-      <h1 className="logo">Navneet</h1>
+      {/* 🔥 LOGO + MOBILE SOCIAL STACKED */}
+      <div className="logo-block">
+        <h1 className="logo">Navneet</h1>
+        <div className="mobile-social">
+          <a href="https://github.com/NavneetSingh09" target="_blank" rel="noreferrer"><FaGithub /></a>
+          <a href="https://linkedin.com/in/navneet-kumar-singh-842429154" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+          <a href="https://x.com/Navneetshenron" target="_blank" rel="noreferrer"><FaTwitter /></a>
+          <a href="https://instagram.com/_.navneet.__.kumar" target="_blank" rel="noreferrer"><FaInstagram /></a>
+        </div>
+      </div>
 
       {/* 🔥 HAMBURGER */}
-      <div 
-        className={`hamburger ${menuOpen ? "active" : ""}`} 
+      <div
+        className={`hamburger ${menuOpen ? "active" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <span></span>
@@ -65,25 +75,25 @@ function Navbar() {
       <ul className={menuOpen ? "open" : ""}>
 
         <li>
-          <a onClick={handleClick} className={active==="header"?"active":""} href="#header">
+          <a onClick={handleClick} className={active==="header" ? "active" : ""} href="#header">
             Home
           </a>
         </li>
 
         <li>
-          <a onClick={handleClick} className={active==="about"?"active":""} href="#about">
+          <a onClick={handleClick} className={active==="about" ? "active" : ""} href="#about">
             About
           </a>
         </li>
 
         <li>
-          <a onClick={handleClick} className={active==="projects"?"active":""} href="#projects">
+          <a onClick={handleClick} className={active==="projects" ? "active" : ""} href="#projects">
             Projects
           </a>
         </li>
 
         <li>
-          <a onClick={handleClick} className={active==="contact"?"active":""} href="#contact">
+          <a onClick={handleClick} className={active==="contact" ? "active" : ""} href="#contact">
             Contact
           </a>
         </li>
