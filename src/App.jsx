@@ -8,24 +8,31 @@ import { useEffect, useState } from "react";
 
 function App() {
 
+  const [theme, setTheme] = useState("dark");
   const [scrolled, setScrolled] = useState(false);
+
+  /* ================= THEME ================= */
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === "dark" ? "light" : "dark");
+  };
 
   /* ================= NAVBAR SCROLL ================= */
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   /* ================= FADE-IN ================= */
   useEffect(() => {
     const faders = document.querySelectorAll(".fade-in");
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -33,49 +40,29 @@ function App() {
         }
       });
     });
-
     faders.forEach(el => observer.observe(el));
   }, []);
 
-  /* ================= 🔥 CURSOR GLOW ================= */
+  /* ================= CURSOR GLOW ================= */
   useEffect(() => {
     const cursor = document.querySelector(".cursor-glow");
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
-
-    // Track mouse position
-    const move = (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    };
-
-    // Smooth animation loop (IMPORTANT 🔥)
+    let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+    const move = (e) => { mouseX = e.clientX; mouseY = e.clientY; };
     const animate = () => {
       currentX += (mouseX - currentX) * 0.1;
       currentY += (mouseY - currentY) * 0.1;
-
-      if(cursor){
-        cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
-      }
-
+      if(cursor) cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
       requestAnimationFrame(animate);
     };
-
     window.addEventListener("mousemove", move);
     animate();
-
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
   return (
     <>
-      {/* 🔥 CURSOR GLOW ELEMENT */}
       <div className="cursor-glow"></div>
-
-      <Navbar scrolled={scrolled} />
+      <Navbar scrolled={scrolled} theme={theme} toggleTheme={toggleTheme} />
       <SocialBar />
       <Header />
       <About />
