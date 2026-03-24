@@ -615,8 +615,8 @@ body{
 
   .parallax-bg{
     background:url('/images/IMG_0914.PNG') no-repeat;
-    background-size:150%;
-    background-position:80% 10%;
+    background-size:cover;
+    background-position:center top;
   }
 
   .social-bar{
