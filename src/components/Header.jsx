@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 function Header() {
 
   const roles = [
-    "Software Engineer",
-    "Backend Developer",
-    "Java Developer",
-    "Spring Boot Developer",
-    "Full Stack Developer"
+    "MS CS Graduate",
+    "Full Stack Developer",
+    "Java & Spring Boot Dev",
+    "2+ Years of Experience",
+    "Open to US Opportunities",
   ];
 
   /* ================= TYPING ================= */
@@ -20,19 +20,16 @@ function Header() {
     let speed = isDeleting ? 50 : 90;
 
     const timer = setTimeout(() => {
-
       const updatedText = isDeleting
         ? current.substring(0, text.length - 1)
         : current.substring(0, text.length + 1);
 
       setText(updatedText);
 
-      // Pause when full word typed
       if (!isDeleting && updatedText === current) {
         setTimeout(() => setIsDeleting(true), 1200);
       }
 
-      // Move to next word
       if (isDeleting && updatedText === "") {
         setIsDeleting(false);
         setIndex((prev) => (prev + 1) % roles.length);
@@ -72,15 +69,15 @@ function Header() {
     <section id="header">
 
       {/* 🔥 PARALLAX BACKGROUND */}
-     <div 
-  className="parallax-bg"
-  style={{
-    transform: `
-      translateY(${offset * 0.4}px)
-      scale(${1 + offset * 0.0003})
-    `
-  }}
-/>
+      <div
+        className="parallax-bg"
+        style={{
+          transform: `
+            translateY(${offset * 0.4}px)
+            scale(${1 + offset * 0.0003})
+          `
+        }}
+      />
 
       {/* 🔥 OVERLAY */}
       <div className="parallax-overlay"></div>
@@ -98,9 +95,18 @@ function Header() {
 
           {/* LINE 3 */}
           <p className="typing-text">
-  <span className="gradient-text">{text}</span>
-  <span className="cursor">|</span>
-</p>
+            <span className="gradient-text">{text}</span>
+            <span className="cursor">|</span>
+          </p>
+
+          {/* LINE 4 — DOWNLOAD CV */}
+          
+           <a href="/Navneet_Singh_Resume.pdf"
+            download
+            className="cv-btn"
+          >
+            Download CV ↓
+          </a>
 
         </div>
       </div>
