@@ -30,6 +30,11 @@ body[data-theme="light"]{
   --overlay-gradient:linear-gradient(to right,rgba(0,0,0,0.75) 25%,rgba(0,0,0,0.4) 60%,rgba(0,0,0,0.1) 100%);
 }
 
+body[data-theme="light"] .contact-right input::placeholder,
+body[data-theme="light"] .contact-right textarea::placeholder{
+  color:#555;
+}
+
 /* ================= BASE ================= */
 
 *{
