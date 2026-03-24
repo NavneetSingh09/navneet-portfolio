@@ -601,7 +601,7 @@ body{
   }
 
   .header-text{
-    margin-top:40%;
+    margin-top:75%;
     padding:0 15px;
   }
 
@@ -615,8 +615,9 @@ body{
 
   .parallax-bg{
     background:url('/images/IMG_0914.PNG') no-repeat;
-    background-size:cover;
+     background-size:cover;
     background-position:center top;
+    
   }
 
   .social-bar{
