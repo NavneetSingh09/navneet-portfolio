@@ -4,31 +4,9 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import SocialBar from "./components/SocialBar";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function App() {
-
-  const [theme, setTheme] = useState("dark");
-  const [scrolled, setScrolled] = useState(false);
-
-  /* ================= THEME ================= */
-  useEffect(() => {
-    document.body.setAttribute("data-theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === "dark" ? "light" : "dark");
-  };
-
-  /* ================= NAVBAR SCROLL ================= */
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   /* ================= FADE-IN ================= */
   useEffect(() => {
@@ -62,7 +40,7 @@ function App() {
   return (
     <>
       <div className="cursor-glow"></div>
-      <Navbar scrolled={scrolled} theme={theme} toggleTheme={toggleTheme} />
+      <Navbar />
       <SocialBar />
       <Header />
       <About />
