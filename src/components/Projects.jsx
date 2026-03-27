@@ -9,12 +9,12 @@ function Projects() {
       live: null
     },
     {
-      title: "Vehicle Rental Management System",
-      description: "Full-stack application with a Spring Boot backend and a responsive HTML/CSS/JavaScript frontend. Features JWT-based authentication, role-based access (Admin/Customer), and REST APIs for managing vehicles, customers, and rental orders.",
-      tech: "Java · Spring Boot · MySQL · JWT · HTML · CSS · JavaScript",
-      github: "https://github.com/NavneetSingh09/vehicle-rental-system-springboot",
-      live: null
-    },
+  title: "Vehicle Rental Management System",
+  description: "Full-stack application with a Spring Boot backend and a responsive HTML/CSS/JavaScript frontend. Features JWT-based authentication, role-based access (Admin/Customer), and REST APIs for managing vehicles, customers, and rental orders.",
+  tech: "Java · Spring Boot · MySQL · JWT · HTML · CSS · JavaScript",
+  github: "https://github.com/NavneetSingh09/vehicle-rental-system-springboot",
+  live: "http://3.142.129.218:8081"
+},,
     {
       title: "Distributed Simulator",
       description: "Simulates a distributed network with a load balancer routing requests across multiple servers.",
