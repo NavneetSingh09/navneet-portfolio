@@ -16,12 +16,12 @@ const projects = [
       live: "http://3.142.129.218:8081"
     },
     {
-      title: "Resume Analyzer",
-      description: "AI-powered resume analyzer using vector embeddings and RAG to match candidates with job descriptions and generate intelligent evaluations.",
-      tech: "Spring Boot · PostgreSQL (pgvector) · OpenAI · Docker",
-      github: "https://github.com/NavneetSingh09/ai-resume-analyzer",
-      live: null
-    },
+  title: "Resume Analyzer",
+  description: "AI-powered resume analyzer using vector embeddings and RAG to match candidates with job descriptions and generate intelligent evaluations.",
+  tech: "Spring Boot · PostgreSQL (pgvector) · OpenAI · Docker",
+  github: "https://github.com/NavneetSingh09/ai-resume-analyzer",
+  live: "http://3.142.129.218:8082"
+},
   ];
 
   return (
