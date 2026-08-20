@@ -18,10 +18,10 @@ function About() {
               <h1 className="sub-title">About Me</h1>
 
               <p>
-                MS Computer Science student at DePaul University (GPA 3.5/4.0) with 3 years of industry
-                experience at Infosys, where I worked on enterprise-scale microservices for Caterpillar Inc.
-                Passionate about backend engineering, distributed systems, and building production-ready
-                applications with Java, Spring Boot, and cloud technologies.
+                MS Computer Science graduate from DePaul University (GPA 3.5/4.0) with 4+ years of industry
+                experience, currently a Software Engineer at MetLife building high-throughput microservices
+                and event-driven claims processing systems. Passionate about backend engineering, distributed
+                systems, and building production-ready applications with Java, Spring Boot, and cloud technologies.
               </p>
 
               <div className="tab-titles">
@@ -47,7 +47,8 @@ function About() {
                     <li><span>Databases</span><br />MySQL, PostgreSQL (pgvector), MongoDB</li>
                     <li><span>Cloud & DevOps</span><br />AWS EC2, Docker, Nginx, GitHub Actions CI/CD, systemd</li>
                     <li><span>Tools</span><br />Git, Postman, IntelliJ, JIRA, WebSocket/STOMP, REST APIs, Microservices, JWT/RBAC</li>
-                    <li><span>AI/ML</span><br />OpenAI API (GPT-4o-mini, Embeddings), RAG Pipelines</li>
+                    <li><span>Messaging</span><br />Apache Kafka, RabbitMQ, Spring Cloud Stream, EDA</li>
+                    <li><span>AI/ML</span><br />OpenAI API (GPT-4o, Embeddings), RAG Pipelines</li>
                   </ul>
                 </div>
               )}
@@ -56,20 +57,20 @@ function About() {
                 <div className="tab-contents active-tab">
                   <ul>
                     <li>
-                      <span>Sep 2021 – Aug 2024</span><br />
-                      Senior Systems Engineer — Infosys Limited, Bangalore
+                      <span>Jan 2026 – Present</span><br />
+                      Software Engineer — MetLife, United States
                     </li>
                     <li>
-                      <span>Caterpillar Inc. (Fortune 50)</span><br />
-                      Decomposed legacy monolith into 8 microservices, reducing MTTR by 40%
+                      <span>Claims Microservices</span><br />
+                      Decomposed legacy policy administration monoliths into domain-driven REST APIs processing 1.2M+ daily insurance claim events with 99.99% uptime
                     </li>
                     <li>
-                      <span>Backend Optimization</span><br />
-                      Reduced API response times by 20% and DB roundtrips by 35% via query optimization
+                      <span>Event-Driven Streaming</span><br />
+                      Built a Kafka + Spring Cloud Stream pipeline, cutting real-time claim notification latency from 450ms to 85ms
                     </li>
                     <li>
-                      <span>SLA Automation</span><br />
-                      Built automated breach notification system improving order pickup rates by 20% across 300+ dealerships
+                      <span>RAG & Performance</span><br />
+                      Integrated a Spring AI/OpenAI GPT-4o RAG microservice cutting manual document review by 55%, and Redis caching cutting p99 claims API latency by 40%
                     </li>
                   </ul>
                 </div>
@@ -79,7 +80,7 @@ function About() {
                 <div className="tab-contents active-tab">
                   <ul>
                     <li>
-                      <span>Sep 2024 – Present</span><br />
+                      <span>Sep 2024 – Jun 2026</span><br />
                       MS Computer Science — DePaul University, Chicago · GPA: 3.5/4.0
                     </li>
                     <li>

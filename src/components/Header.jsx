@@ -6,7 +6,7 @@ function Header() {
     "MS CS Graduate",
     "Full Stack Developer",
     "Java & Spring Boot Engineer",
-    "3+ Years of Experience",
+    "4+ Years of Experience",
     "Open to US Opportunities",
   ];
 
